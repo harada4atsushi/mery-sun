@@ -17,7 +17,7 @@
         pause: 8500,
         infiniteLoop: false,
         onSlideAfter: function($slideElement, oldIndex, newIndex) {
-          if (slider.getSlideCount() == newIndex + 1) {
+          if (slider.getSlideCount() == newIndex) {
           //if (newIndex == 1) {
             tel = $('#tel_number').val();
 
@@ -27,7 +27,7 @@
                 setTimeout(function() {
                   console.log('change image!')
                   $('.bx-wrapper .bx-viewport').css('background-image', "url('../images/reimen-4.gif')")
-                }, 8110);
+                }, 10000);
               }
             });
           }
