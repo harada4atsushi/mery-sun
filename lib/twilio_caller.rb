@@ -13,7 +13,7 @@ class TwilioCaller
     @call = @client.account.calls.create(
       :from => ENV['CALL_FROM'],
       :to => tel_to,
-      :url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
+      :url => 'https://mery-san.herokuapp.com/mery.xml'
     )
   end
 end
