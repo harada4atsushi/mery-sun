@@ -5,6 +5,6 @@ require 'dotenv'
 Dotenv.load
 
 get '/' do
-  TwilioCaller.new.call
-  'called'
+  #TwilioCaller.new.call
+  erb :index
 end
