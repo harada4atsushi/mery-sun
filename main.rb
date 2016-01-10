@@ -14,7 +14,7 @@ get '/call' do
   TwilioCaller.new.call(params[:tel_number]) if params[:tel_number]
 end
 
-post '/status_callback' do
+get '/status_callback' do
   logger.debug "-----------------------"
   logger.debug params
 
