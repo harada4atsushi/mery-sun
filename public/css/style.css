@@ -7,6 +7,10 @@ body {
   font-size: 1.7em;
 }
 
+a, a:hover, a:visited, a:link, a:active {
+  color: inherit;
+}
+
 .bx-wrapper .bx-viewport {
   background-color: black;
   border: none;
@@ -34,10 +38,18 @@ div#box {
   line-height: 2em;
 }
 
-li {
-  padding: 40px 0;
+.bxslider li {
+  padding: 50px 0;
 }
 
 .intro {
   text-align: center;
+}
+
+.ninja_onebutton {
+  float: right;
+}
+
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
 }

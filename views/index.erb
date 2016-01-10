@@ -4,9 +4,6 @@
   <title>メリーさん</title>
   <link href="css/jquery.bxslider.css" rel="stylesheet" />
   <link rel="stylesheet" media="all" href="css/style.css" />
-  <!--
-  <script src="/assets/application-303743e2246710ded9327f5840c93980.js"></script>
-   -->
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/jquery.bxslider.min.js"></script>
   <script type="text/javascript">
@@ -17,12 +14,22 @@
         auto: false,
         mode: 'fade',
         pager: false,
+        pause: 7000,
         infiniteLoop: false,
         onSlideAfter: function($slideElement, oldIndex, newIndex) {
-          //if (slider.getSlideCount() == newIndex + 1) {
-          if (newIndex == 1) {
+          if (slider.getSlideCount() == newIndex + 1) {
+          //if (newIndex == 1) {
             tel = $('#tel_number').val();
-            $.get("call?tel_number=" + tel);
+
+            $.get("call?tel_number=" + tel, function(data) {
+              console.log('data: ' + data);
+              if (data == 'in-progress') {
+                setTimeout(function() {
+                  console.log('change image!')
+                  $('.bx-wrapper .bx-viewport').css('background-image', "url('../images/reimen-4.gif')")
+                }, 8110);
+              }
+            });
           }
         },
       });
@@ -38,6 +45,19 @@
   </script>
 </head>
 <body>
+  <div class="ninja_onebutton">
+    <script type="text/javascript">
+    //<![CDATA[
+    (function(d){
+    if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_e8d24d1cc63cb301c83faffd458e7779)=='undefined'){
+        document.write("<sc"+"ript type='text\/javascript' src='\/\/omt.shinobi.jp\/b\/e8d24d1cc63cb301c83faffd458e7779'><\/sc"+"ript>");
+    }else{
+        window.NINJA_CO_JP_ONETAG_BUTTON_e8d24d1cc63cb301c83faffd458e7779.ONETAGButton_Load();}
+    })(document);
+    //]]>
+    </script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+  </div>
+
   <div id="box">
     <ul class="bxslider">
       <li class="intro">
@@ -95,12 +115,23 @@
         彼女は心臓が止まりそうなほど驚き、何もすることができずにただその場にうずくまり震えていた。<br />
         それから、また５分が過ぎる・・・<br />
         再び電話が鳴り、あの人形の忌まわしい声が彼女にこう告げた。<br />
+        「どうして開けてくれなかったの？<br />
+        でも、もういいわ。こうしてあなたに会うことができたのだから。」<br />
       </li>
       <li>
-        「どうして開けてくれなかったの？でも、もういいわ。こうしてあなたに会うことができたのだから。<br />
-        わかる？わたしは今、あなたの後ろにいるのよ・・・」<br />
+        「もしもし・・・今、あなたの後ろにいるの・・・」<br />
       </li>
   	</ul>
+    <h5>素材提供</h5>
+    <ul class="sozai-link">
+      <li>画像素材: <a href="http://ghosttail.com/index.html">Ghost Tail</a></li>
+      <li>音声素材: <a href="http://www.vita-chi.net/sozai1.htm">びたちー素材館</a></li>
+      <li>音声素材: <a href="https://www.youtube.com/watch?v=wdontYq_I-8">Youtube</a></li>
+      <li>文章: <a href="http://m-space.jp/a/?aass01">すごく怖い話・都市伝説</a></li>
+    </ul>
+
+    <h5>制作</h5>
+    原田 敦(<a href="http://www.mof-mof.co.jp/">mofmof inc.</a>)
   </div>
 </body>
 </html>
