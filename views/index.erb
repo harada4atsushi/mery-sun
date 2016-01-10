@@ -14,7 +14,7 @@
         auto: false,
         mode: 'fade',
         pager: false,
-        pause: 8500,
+        pause: 10000,
         infiniteLoop: false,
         onSlideAfter: function($slideElement, oldIndex, newIndex) {
           if (slider.getSlideCount() == newIndex) {
@@ -27,7 +27,7 @@
                 setTimeout(function() {
                   console.log('change image!')
                   $('.bx-wrapper .bx-viewport').css('background-image', "url('../images/reimen-4.gif')")
-                }, 10000);
+                }, 8110);
               }
             });
           }
