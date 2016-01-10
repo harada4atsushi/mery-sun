@@ -15,8 +15,8 @@ get '/call' do
 end
 
 get '/status_callback' do
-  logger.debug "-----------------------"
-  logger.debug params
+  logger.info "-----------------------"
+  logger.info params
 
   puts '----------------------------------------------'
   puts 'status_callback'
