@@ -1,7 +1,43 @@
 body {
   background-color: black;
+  height: 500px;
+  color: white;
+  height: 100%;
+  font-family: DFPLeiSho-SB,ＤＦＰ隷書体,serif;
+  font-size: 1.7em;
+}
+
+.bx-wrapper .bx-viewport {
+  background-color: black;
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   background-image: url('../images/reimen-1.gif');
   background-repeat: no-repeat;
   background-position: center;
-  height: 500px;
+}
+
+div#box {
+  //background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70%;
+  height: 80%;
+}
+
+.bxslider {
+  line-height: 2em;
+}
+
+li {
+  padding: 40px 0;
+}
+
+.intro {
+  text-align: center;
 }

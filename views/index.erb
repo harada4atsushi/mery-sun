@@ -2,11 +2,104 @@
 <html>
 <head>
   <title>メリーさん</title>
+  <link href="css/jquery.bxslider.css" rel="stylesheet" />
   <link rel="stylesheet" media="all" href="css/style.css" />
   <!--
   <script src="/assets/application-303743e2246710ded9327f5840c93980.js"></script>
    -->
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script type="text/javascript">
+    var slider;
+
+    $(document).ready(function(){
+      slider = $('.bxslider').bxSlider({
+        auto: false,
+        mode: 'fade',
+        pager: false,
+        infiniteLoop: false,
+        onSlideAfter: function($slideElement, oldIndex, newIndex) {
+          if (slider.getSlideCount() == newIndex + 1) {
+            tel = $('#tel_number').val();
+            $.get("call?tel_number=" + tel);
+          }
+        },
+      });
+
+      $('#start').on('click', function() {
+        tel = $('#tel_number').val();
+        if (tel != '') {
+          slider.goToNextSlide();
+          slider.startAuto();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
+  <div id="box">
+    <ul class="bxslider">
+      <li class="intro">
+        <h1>メリーさんの電話</h1>
+        電話番号: <input type="text" id="tel_number"></input><br />
+        <a href="#" id="start">スタート</a>
+      </li>
+  		<li>
+        あるマンションの１３階に住む若い女性が部屋の整理をしていた。<br />
+        押入れの奥を片付けていた彼女は、そこで古い人形を見つける。<br />
+        それは彼女がまだ幼かったときに祖母から買ってもらった人形。<br />
+        「メリーさん」と呼んで大事にしていた人形だ。<br />
+        しかし、長い間その存在を忘れられていたメリーさんは埃にまみれ、<br />
+        見る影もないほどに薄汚れてしまっている。<br />
+        この人形をどうしようか・・・<br />
+        しばらく悩んだ彼女は、結局この汚い人形を他のゴミと一緒に捨てることにした。<br />
+        <br /><br /><br /><br />
+      </li>
+      <li>
+        その翌日のこと。<br />
+        彼女の家に電話がかかってきた。<br />
+        相手の声に聞き覚えはないが、声からするとどうやら小さな女の子からのようだ。<br />
+        「もしもし、私よ。メリーよ。何で私を捨てたの？覚えてらっしゃい。<br />
+        必ずこの恨みを晴らすために、あなたのもとに帰るから！」<br />
+        それだけを一方的に告げると電話は切れた。<br />
+        彼女はゾッとしたが、誰かのいたずらだろうと考えて余り気にしないことにした。<br />
+      </li>
+      <li>
+        ところが、そのわずか５分後。<br />
+        またもや彼女の部屋に電話のベルが鳴り響く。<br />
+        今度の電話もやはりあの“人形”を名乗る少女からであった。<br />
+        「もしもし、今あなたのマンションの前まで来たわ。もうすぐ会えるわね」<br />
+      </li>
+      <li>
+        それから５分たつと、また電話がかかってきた。<br />
+        「もしもし、今あなたのマンションの２階よ。もうすぐ会えるわね」<br />
+        それからも規則正しく５分おきに電話はかかってくる。<br />
+        「もしもし、今あなたのマンションの３階よ」<br />
+        「もしもし、今あなたのマンションの４階よ」<br />
+        もう彼女は怖くて電話に出ることができなかったのだが、<br />
+        “人形”はそれでもお構いなしに電話をかけ、<br />
+        留守番電話に一方的にメッセージを残していった。<br />
+      </li>
+      <li>
+        「もしもし、今あなたのマンションの１０階よ」<br />
+        「もしもし、今あなたのマンションの１１階よ」<br />
+        「もしもし、今あなたのマンションの１２階よ」<br />
+        ついに人形は彼女が住む部屋の、すぐ下の階にまで迫ってきた。<br />
+        彼女は逃げ出そうかと思った。<br />
+        だが、もう遅すぎる。<br />
+      </li>
+      <li>
+        再び電話のベルが鳴り、留守番電話にこんなメッセージが吹きこまれたのだ。<br />
+        「もしもし、今あなたの家の前よ。ドアを開けて。居留守を使ったってダメよ。そこにいるのは、ちゃーんとわかっているんだから」<br />
+        彼女は心臓が止まりそうなほど驚き、何もすることができずにただその場にうずくまり震えていた。<br />
+        それから、また５分が過ぎる・・・<br />
+        再び電話が鳴り、あの人形の忌まわしい声が彼女にこう告げた。<br />
+      </li>
+      <li>
+        「どうして開けてくれなかったの？でも、もういいわ。こうしてあなたに会うことができたのだから。<br />
+        わかる？わたしは今、あなたの後ろにいるのよ・・・」<br />
+      </li>
+  	</ul>
+  </div>
 </body>
 </html>

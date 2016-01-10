@@ -7,10 +7,12 @@ class TwilioCaller
     @client = Twilio::REST::Client.new @account_sid, @auth_token
   end
 
-  def call
+  def call(tel)
+    tel_to = tel.gsub(/\A0/,'+81')
+
     @call = @client.account.calls.create(
       :from => ENV['CALL_FROM'],
-      :to => ENV['CALL_TO'],
+      :to => tel_to,
       :url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient'
     )
   end
